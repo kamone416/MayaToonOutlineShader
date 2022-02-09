@@ -1,6 +1,10 @@
 # MayaToonOutlineShader
 
-Realtime Toon Shader for Maya Hardware 2.0 Renderer
+## Realtime Toon Shader for Maya Hardware 2.0 Renderer
+
+This is a toon shader for Maya Hardware 2.0 Renderer that implements a feature commonly used in game engines.
+
+This shader is useful for previewing a model without exporting it to a game engine.
 
 ![preview](images/preview.gif)
 
@@ -10,13 +14,36 @@ twitter: <https://twitter.com/kamone416>
 
 ## Usage
 
-Create a DirextX 11 Shader Material and load MayaToonOutline.fx.
+1. Enable the `dx11Shader.mll` plugin.
 
-This shader works with DirextX 11, so please set your Rendering engine to `DirextX 11`.
+![preview](images/enable_plugin.png)
+
+2. Set the rendering engine to DirextX11.
 
 ```
-Preferences > Display > Viewport 2.0 > Rendering engine
+Preferences Window: Display > Viewport 2.0 > Rendering engine
 ```
+![preview](images/select_rendering_engine.png)
+
+3. Save the preferences and restart MAYA.
+
+4. Create `DirectX 11 Shader` material.
+
+```
+Hypershade Window: Create > Materials > DirextX 11 Shader
+```
+
+![preview](images/create_material.png)
+
+5. Open the material's attributes and change the shader file to the `MayaToonOutline.fx` file you downloaded.
+
+![preview](images/change_shader_file.png)
+
+
+6. Apply the material to the object.
+7. Enable `Textured` for a real-time preview.
+
+![preview](images/enable_textured.png)
 
 ## Parameters
 
@@ -24,7 +51,7 @@ Preferences > Display > Viewport 2.0 > Rendering engine
 
 | Parameters  | Description                                                                                        |
 | ----------- | -------------------------------------------------------------------------------------------------- |
-| Source File | Select the MayaToonOutline.fx file.                                                             |
+| Shader File | Select the MayaToonOutline.fx file.                                                             |
 | Technique   | `ToonOutline`: Toon shading and Outline.<br>`Toon`: Toon shading only.<br>`Outline`: Outline only. |
 
 ### Lighting
